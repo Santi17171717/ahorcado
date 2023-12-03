@@ -1,0 +1,234 @@
+/**** JUEGO DEL AHORCADO ****/
+
+html{
+    overflow-x: hidden;    
+}
+
+@font-face{
+	font-family: "WEST";
+    src: url("../western/WEST.TTF");
+} 
+
+body{
+	background-image: url("../img/acantilado.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#reset{
+	width: 200px;
+	height: 30px;
+	font-size: 15px;
+	padding: 4px;
+}
+
+#abcdario{
+	margin: 10px;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: auto;  /*lo calcula el navegador, poniendo un valor adecuado*/
+  padding-top: 10vh;
+}
+
+.titulo {
+  margin-top: 8vh;
+  text-align: center;
+  font-family: WEST;
+  font-size: 70px;  
+}
+
+#msg-final {
+  text-align: center;
+  color: red;
+  transition: all 0.8s ease;
+  font-size: 60px;
+  height: 60px;
+  margin-bottom: 20;
+}
+
+.zoom-in {
+  transform: scale(1) !important;  /*usar la regla !important es una mala práctica y debería evitarse*/
+}
+
+#acierto {
+  text-align: center;
+  min-height: 24px;
+  transform: scale(0); /*lo hace desaparecer*/
+}
+
+.acierto{
+  animation: zoomInOut 1s ease;
+}
+
+.rojo {
+  color: red;
+}
+
+.verde{
+  color: green;
+}
+
+@keyframes zoomInOut {
+  0% {transform: scale(0);}
+  50% {transform: scale(1);}
+  70% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+
+.palabra {
+  margin: 0 auto 25px auto;
+  text-align: center;
+  color: royalblue;
+  letter-spacing: 6px;
+}
+
+span {
+   color: red;
+}
+
+.letra:disabled { /*pseudo-clase*/
+  color:blue;
+}
+
+#picture {
+  position: relative;  
+}
+
+#picture img {  /*selector espacio en blanco: descendientes*/
+  position: absolute;
+  top: -203px;
+  right: 52vw;
+  height: 225px;
+}
+
+#image5, #image4, #image3,
+#image2, #image1, #image0 {	
+  opacity: 0; /*invisible*/
+  transition: opacity 0.8s ease;
+}
+
+.fade-in {
+  opacity: 1 !important;
+}
+
+.encuadre {
+  border: 2px dashed crimson;
+  padding: 3px 2px 2px 6px;
+}
+
+.pajaro{
+	animation: buitre 15s infinite;
+	animation-timing-function: linear;
+  transform: rotate(32deg);
+  margin-top: -47px;
+}
+
+@keyframes buitre{
+	from{
+		margin-right: 100%; 
+	}
+	to{
+		margin-left: 100%; 
+	}
+}
+
+
+/*  */
+#coche{
+  background-image: url("../img/coche.png");
+  width: 80px;
+  height: 46px;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#boom{
+  display: none;
+  background-image: url("../img/boom.png");
+  width: 63px;
+  height: 58px;
+  position: absolute;
+  top: 40%;
+  left: 73%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#mensajePerder{
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: red;
+  font-size: 24px;
+  background-color: gainsboro;
+  border-radius: 25%;
+  border: 1px solid black;
+
+}
+
+#mensajePerder h1{
+  padding: 10px;
+}
+
+#ayuda{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+
+
+@keyframes cocheAcantilado {
+  to {
+    left: 70%;
+    top: 37%;
+    transform: rotate(17deg);
+  }
+}
+
+
+/* Estilo del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Se queda fijo en la pantalla */
+  z-index: 1; /* Se sitúa sobre otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el desplazamiento si es necesario */
+  background-color: rgba(0,0,0,0.4); /* Color de fondo */
+}
+
+/* Estilo del contenido del modal */
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% desde la parte superior y centrado */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Podrías ajustar este valor según tus necesidades */
+}
+
+/* Estilo del botón de cerrar */
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
