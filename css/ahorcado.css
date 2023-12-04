@@ -117,7 +117,7 @@ span {
   border: 2px dashed crimson;
   padding: 3px 2px 2px 6px;
 }
-
+/*Superman vuela inclinado y no en vertical*/
 .pajaro{
 	animation: buitre 15s infinite;
 	animation-timing-function: linear;
